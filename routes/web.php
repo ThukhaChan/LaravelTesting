@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 //use App\Http\Controllers\TestController;
@@ -23,5 +24,15 @@ Route::get('/', function () {
 Route::get('/test2',function(){
     return view('test');
 });
+
 Route::resource('test',TestController::class);
 
+Route::get('/test3', function () {
+    return 'Hello World';
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
